@@ -8,7 +8,7 @@ const About = () => {
         
         {/* Main Description */}
         <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-          We are an AI startup with the ambition to create a sustainable technology ecosystem. 
+          We are an AI stabbhbbbbbbbbbffrtup with the ambition to create a sustainable technology ecosystem. 
           <span className="text-blue-400">#MoreThanJustAI</span>, but a movement to prepare Indonesia for the digital revolution.
         </p>
 
