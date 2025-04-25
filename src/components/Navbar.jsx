@@ -9,7 +9,7 @@ function Navbar() {
       <div className="container mx-auto px-4 flex justify-between items-center h-full">
         {/* Logo dengan Teks dan Gambar */}
         <Link to="/" className="text-2xl font-bold text-white hover:text-gray-300 transition duration-300 flex items-center space-x-3">
-          <span>Orion</span>
+          <span>NolanDex</span>
           <img 
             src="/orion.png" 
             alt="Orion Logo" 
