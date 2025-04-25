@@ -48,17 +48,17 @@ const Home = () => {
             businesses but also prioritize education, ensuring a broader impact on society and the digital future.
           </p>
 
-          {/* Buttons */}
           <div className="flex justify-center gap-4 mb-12">
-            <div className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition">
-              Online Business Setup
-            </div>
-            <span className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition"
-              onClick={() => navigate("/chatbot")} // Arahkan ke halaman chatbot
-            >
-              Try Our First AI
-            </span>
-          </div>
+  <button className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition">
+    Online Business Setup
+  </button>
+  <button 
+    className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition"
+    // onClick dihapus atau dikomentari
+  >
+    Try Our First AI
+  </button>
+</div>
 
           {/* Info Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
