@@ -53,11 +53,11 @@ const Home = () => {
             <div className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition">
               Online Business Setup
             </div>
-            <div className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition"
+            <span className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition"
               onClick={() => navigate("/chatbot")} // Arahkan ke halaman chatbot
             >
               Try Our First AI
-            </button>
+            </span>
           </div>
 
           {/* Info Grid */}
