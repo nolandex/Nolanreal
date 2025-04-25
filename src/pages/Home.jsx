@@ -27,7 +27,7 @@ const Home = () => {
     },
     {
       title: " Simplify Digital Success with NolanDex",
-      description: "NolanDex provides websites, chatbots, social media, and automation for small businesses. Easy, affordable, plus reseller opportunities. Succeed online!,
+      description: "NolanDex provides websites, chatbots, social media, and automation for small businesses. Easy, affordable, plus reseller opportunities. Succeed online!",
     },
   ];
   
