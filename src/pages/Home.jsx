@@ -38,14 +38,13 @@ const Home = () => {
         <div className="container mx-auto px-4 text-center">
           {/* Title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Orion <br />
-            <span className="text-gray-400">Artificial Intelligence</span>
+            We Create <br />
+            <span className="text-gray-400">You Launch and Earn</span>
           </h1>
 
           {/* Description */}
           <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-3xl mx-auto">
-            Orion is a leading AI company committed to building innovative technology solutions that not only transform
-            businesses but also prioritize education, ensuring a broader impact on society and the digital future.
+            From website to content, we prepare everything so you can focus on growing your business
           </p>
 
           {/* Buttons */}
