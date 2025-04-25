@@ -55,7 +55,7 @@ const Home = () => {
             </button>
             <button 
               className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition"
-              onClick={() => navigate("/chatbot")} // Arahkan ke halaman chatbot
+              onClick={() => navigate("/chatbot")} // Dinonaktifkan
             >
               Try Our First AI
             </button>
