@@ -53,12 +53,12 @@ const Home = () => {
             <button className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition">
               Online Business Setup
             </button>
-            <button 
+            <div 
               className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition"
         
             >
               Try Our First AI
-            </button>
+            </div>
           </div>
 
           {/* Info Grid */}
