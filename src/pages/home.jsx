@@ -97,23 +97,24 @@ const Home = () => {
             </button>
 
             {/* Marquee-like Horizontal Scrolling */}
-            <div className="w-full overflow-hidden">
+            <div className="w-full">
               <motion.div
                 className="flex"
                 animate={{
-                  x: ["0%", `-${100 * roles.length}%`], // Geser sejauh lebar total elemen
+                  x: ["0%", `-${100 * roles.length}%`], // Geser sejauh 6 elemen
                 }}
                 transition={{
-                  duration: roles.length * 2.5, // 2.5 detik per elemen (2x lebih cepat)
+                  duration: roles.length * 1.67, // ~10 detik total (3x lebih cepat)
                   repeat: Infinity,
                   repeatType: "loop",
                   ease: "linear",
                 }}
+                style={{ width: `${100 * roles.length}%` }} // Lebar cukup untuk semua elemen
               >
                 {roles.map((job, index) => (
                   <div
                     key={index}
-                    className="glass p-6 rounded-lg min-w-[250px] mx-3 flex-shrink-0 border border-red-500" // Border untuk debugging
+                    className="glass p-6 rounded-lg min-w-[250px] mx-3 flex-shrink-0 border border-red-500"
                   >
                     <h3 className="text-xl font-semibold mb-3">
                       {job.emoji} {job.role}
