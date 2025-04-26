@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import yourImage from './assets/display-image.jpg'; // Import your image
+import yourImage from '../assets/display-image.jpg'; // Import your image
 
 const Form = () => {
   const [formData, setFormData] = useState({
