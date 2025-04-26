@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Data Info Grid
+  // Data untuk info grid
   const infoGridItems = [
     {
       title: "🚀 AI for the Future",
@@ -21,22 +19,6 @@ const Home = () => {
       description: "We are proud to be the first AI company from our country competing globally.",
     },
   ];
-
-  // Data Gambar Carousel
-  const images = [
-    "/images/slider1.jpg",
-    "/images/slider2.jpg",
-    "/images/slider3.jpg",
-    "/images/slider4.jpg",
-  ];
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
 
   return (
     <>
@@ -60,7 +42,7 @@ const Home = () => {
             <button className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition">
               Explore Our Innovations
             </button>
-            <button 
+            <button
               className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition"
               onClick={() => navigate("/chatbot")}
             >
@@ -69,7 +51,7 @@ const Home = () => {
           </div>
 
           {/* Info Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             {infoGridItems.map((item, index) => (
               <div key={index} className="glass p-6 rounded-lg">
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
@@ -77,33 +59,6 @@ const Home = () => {
               </div>
             ))}
           </div>
-
-          {/* Carousel Section */}
-          <div className="relative w-full max-w-4xl mx-auto">
-            <motion.div 
-              key={currentIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img
-                src={images[currentIndex]}
-                alt={`Slide ${currentIndex + 1}`}
-                className="w-full h-64 object-cover rounded-lg"
-              />
-            </motion.div>
-
-            {/* Navigation Buttons */}
-            <div className="absolute inset-0 flex justify-between items-center px-4">
-              <button onClick={prevSlide} className="bg-white/50 hover:bg-white text-black p-2 rounded-full">
-                ‹
-              </button>
-              <button onClick={nextSlide} className="bg-white/50 hover:bg-white text-black p-2 rounded-full">
-                ›
-              </button>
-            </div>
-          </div>
-
         </div>
       </section>
     </>
