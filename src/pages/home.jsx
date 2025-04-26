@@ -34,6 +34,9 @@ const Home = () => {
     },
   ];
 
+  // Debugging: Log jumlah elemen yang di-render
+  console.log("Jumlah elemen roles:", roles.length);
+
   return (
     <>
       {/* Hero Section */}
@@ -98,21 +101,19 @@ const Home = () => {
               <motion.div
                 className="flex"
                 animate={{
-                  x: ["0%", "-50%"], // Geser sampai setengah karena elemen diduplikasi
+                  x: ["0%", `-${100 * roles.length}%`], // Geser sejauh lebar total elemen
                 }}
                 transition={{
-                  duration: 30, // Durasi lebih panjang untuk menampilkan semua elemen
+                  duration: roles.length * 5, // 5 detik per elemen
                   repeat: Infinity,
-                  repeatType: "loop", // Looping mulus
+                  repeatType: "loop",
                   ease: "linear",
                 }}
-                style={{ width: "200%" }} // Lebar cukup untuk semua elemen
               >
-                {/* Double the roles array untuk efek seamless looping */}
-                {[...roles, ...roles].map((job, index) => (
+                {roles.map((job, index) => (
                   <div
                     key={index}
-                    className="glass p-6 rounded-lg min-w-[250px] mx-3 flex-shrink-0"
+                    className="glass p-6 rounded-lg min-w-[250px] mx-3 flex-shrink-0 border border-red-500" // Border untuk debugging
                   >
                     <h3 className="text-xl font-semibold mb-3">
                       {job.emoji} {job.role}
