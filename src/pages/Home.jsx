@@ -44,8 +44,9 @@ const Home = () => {
 
           {/* Description */}
           <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-3xl mx-auto">
-            Orion is a leading AI company committed to building innovative technology solutions that not only transform
-            businesses but also prioritize education, ensuring a broader impact on society and the digital future.
+            NolanDex is a digital setup service that helps aspiring entrepreneurs and small businesses establish a complete online presence — from websites and chatbots to social media content and automation. We also offer a zero-capital reseller program, empowering anyone to earn by promoting our services.
+
+
           </p>
 
           {/* Buttons */}
