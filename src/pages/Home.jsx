@@ -53,12 +53,12 @@ const Home = () => {
             <button className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition">
               Online Business Setup
             </button>
-            <div 
+            <button 
               className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition"
-        
+              onClick={() => window.open("https://wa.me/6285156779923", "_blank")}
             >
               Try Our First AI
-            </div>
+            </button>
           </div>
 
           {/* Info Grid */}
