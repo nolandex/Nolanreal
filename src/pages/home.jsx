@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
 
-  // Data untuk roles (tim)
   const roles = [
     { role: "Web Developer", emoji: "🖥️" },
     { role: "UI/UX Designer", emoji: "💻" },
@@ -15,7 +14,6 @@ const Home = () => {
     { role: "Project Management", emoji: "📋" },
   ];
 
-  // Data untuk info grid
   const infoGridItems = [
     {
       title: "Launch Your Online Business Effortlessly",
@@ -82,12 +80,12 @@ const Home = () => {
               Buy Now
             </button>
 
-            {/* Marquee-like Horizontal Scrolling */}
-            <div className="w-full overflow-hidden py-4">
+            {/* Marquee Section */}
+            <div className="w-full overflow-hidden py-4 relative">
               <motion.div
-                className="flex"
+                className="flex w-max"
                 animate={{
-                  x: ["0%", "-50%"], // <- diperbaiki di sini
+                  x: ["0%", "-100%"],
                 }}
                 transition={{
                   duration: 30,
@@ -95,11 +93,10 @@ const Home = () => {
                   ease: "linear",
                 }}
               >
-                {/* Double the array for seamless looping */}
                 {[...roles, ...roles].map((job, index) => (
                   <div 
                     key={`${job.role}-${index}`}
-                    className="glass p-6 rounded-lg min-w-[250px] mx-3 flex-shrink-0"
+                    className="glass p-6 rounded-lg min-w-[250px] mx-6 flex-shrink-0"
                   >
                     <h3 className="text-xl font-semibold mb-3">
                       {job.emoji} {job.role}
