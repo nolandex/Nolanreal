@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate(); // Inisialisasi useNavigate
+  const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Data untuk info grid
+  // Data Info Grid
   const infoGridItems = [
     {
       title: "🚀 AI for the Future",
@@ -22,15 +22,13 @@ const Home = () => {
     },
   ];
 
-  // Gambar untuk carousel
+  // Data Gambar Carousel
   const images = [
     "/images/slider1.jpg",
     "/images/slider2.jpg",
     "/images/slider3.jpg",
     "/images/slider4.jpg",
   ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -82,21 +80,21 @@ const Home = () => {
 
           {/* Carousel Section */}
           <div className="relative w-full max-w-4xl mx-auto">
-            <div className="overflow-hidden rounded-lg">
-              <motion.img
-                key={images[currentIndex]}
+            <motion.div 
+              key={currentIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img
                 src={images[currentIndex]}
                 alt={`Slide ${currentIndex + 1}`}
-                className="w-full object-cover h-64"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
+                className="w-full h-64 object-cover rounded-lg"
               />
-            </div>
+            </motion.div>
 
             {/* Navigation Buttons */}
-            <div className="flex justify-between absolute top-1/2 left-0 right-0 transform -translate-y-1/2 px-4">
+            <div className="absolute inset-0 flex justify-between items-center px-4">
               <button onClick={prevSlide} className="bg-white/50 hover:bg-white text-black p-2 rounded-full">
                 ‹
               </button>
