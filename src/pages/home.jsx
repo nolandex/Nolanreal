@@ -31,21 +31,17 @@ const Home = () => {
 
   return (
     <>
-      {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center relative z-10 pt-32 pb-12">
         <div className="container mx-auto px-4 text-center">
-          {/* Title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             We Create <br />
             <span className="text-gray-400">You Launch and Earn</span>
           </h1>
 
-          {/* Description */}
           <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-3xl mx-auto">
             NolanDex is a digital setup service that helps aspiring entrepreneurs and small businesses establish a complete online presence — from websites and chatbots to social media content and automation. We also offer a zero-capital reseller program, empowering anyone to earn by promoting our services.
           </p>
 
-          {/* Buttons */}
           <div className="flex justify-center gap-4 mb-12">
             <button className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition">
               Get Started
@@ -58,7 +54,6 @@ const Home = () => {
             </button>
           </div>
 
-          {/* Info Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
             {infoGridItems.map((item, index) => (
               <div key={index} className="glass p-6 rounded-lg">
@@ -68,11 +63,9 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Join Our Team Section */}
           <div className="mt-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Join Our Team</h2>
 
-            {/* Buy Now Button */}
             <button 
               className="glass px-8 py-4 text-black font-semibold hover:bg-gray-100 hover:text-black transition mb-8"
               onClick={() => navigate("/form")}
@@ -85,7 +78,7 @@ const Home = () => {
               <motion.div
                 className="flex w-max"
                 animate={{
-                  x: ["0%", "-100%"],
+                  x: ["0%", "-50%"],
                 }}
                 transition={{
                   duration: 30,
@@ -93,7 +86,7 @@ const Home = () => {
                   ease: "linear",
                 }}
               >
-                {[...roles, ...roles].map((job, index) => (
+                {[...roles, ...roles, ...roles, ...roles].map((job, index) => (
                   <div 
                     key={`${job.role}-${index}`}
                     className="glass p-6 rounded-lg min-w-[250px] mx-6 flex-shrink-0"
