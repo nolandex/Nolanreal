@@ -104,7 +104,7 @@ const Home = () => {
                   x: ["0%", `-${100 * roles.length}%`], // Geser sejauh lebar total elemen
                 }}
                 transition={{
-                  duration: roles.length * 5, // 5 detik per elemen
+                  duration: roles.length * 2.5, // 2.5 detik per elemen (2x lebih cepat)
                   repeat: Infinity,
                   repeatType: "loop",
                   ease: "linear",
