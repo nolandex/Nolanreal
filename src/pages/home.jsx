@@ -7,9 +7,9 @@ const Home = () => {
 
   // Data untuk roles (tim)
   const roles = [
-    { role: "Online Business Setup", emoji: "🖥️" },
-    { role: "Reseller Program", emoji: "💻" },
-    { role: "Database Learning Engineer", emoji: "🤖" },
+    { role: "Web Developer", emoji: "🖥️" },
+    { role: "UI/UX Designer", emoji: "💻" },
+    { role: "Chatbot Specialist", emoji: "🤖" },
     { role: "Database Administrator", emoji: "🗄️" },
     { role: "DevOps Engineer", emoji: "⚙️" },
     { role: "Project Management", emoji: "📋" },
@@ -19,31 +19,22 @@ const Home = () => {
   const infoGridItems = [
     {
       title: "Launch Your Online Business Effortlessly",
-      description:
-        "NolanDex offers websites, chatbots, social media, and automation for startups. Fast, affordable, no tech skills needed. Go digital now!",
+      description: "NolanDex offers websites, chatbots, social media, and automation for startups. Fast, affordable, no tech skills needed. Go digital now!",
     },
     {
-      title: "Earn Big with NolanDex Reseller Program",
-      description:
-        "Sell NolanDex’s website, chatbot, and automation services as a reseller. Zero costs, high commissions. Start earning today!",
+      title: "Become a NolanDex Reseller",
+      description: "Sell NolanDex's website, chatbot, and automation services as a reseller. Zero costs, high commissions. Start earning today!",
     },
     {
       title: "Simplify Digital Success with NolanDex",
-      description:
-        "NolanDex provides websites, chatbots, social media, and automation for small businesses. Easy, affordable, plus reseller opportunities. Succeed online!",
+      description: "NolanDex provides websites, chatbots, social media, and automation for small businesses. Easy, affordable, plus reseller opportunities. Succeed online!",
     },
   ];
-
-  // Debugging: Log jumlah elemen yang di-render
-  console.log("Jumlah elemen roles:", roles.length);
 
   return (
     <>
       {/* Hero Section */}
-      <section
-        id="home"
-        className="min-h-screen flex items-center relative z-10 pt-32 pb-12"
-      >
+      <section id="home" className="min-h-screen flex items-center relative z-10 pt-32 pb-12">
         <div className="container mx-auto px-4 text-center">
           {/* Title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
@@ -53,18 +44,15 @@ const Home = () => {
 
           {/* Description */}
           <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-3xl mx-auto">
-            NolanDex is a leading AI company committed to building innovative
-            technology solutions that not only transform businesses but also
-            prioritize education, ensuring a broader impact on society and the
-            digital future.
+            NolanDex is a digital setup service that helps aspiring entrepreneurs and small businesses establish a complete online presence — from websites and chatbots to social media content and automation. We also offer a zero-capital reseller program, empowering anyone to earn by promoting our services.
           </p>
 
           {/* Buttons */}
           <div className="flex justify-center gap-4 mb-12">
             <button className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition">
-              Online Business Setup
+              Get Started
             </button>
-            <button
+            <button 
               className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition"
               onClick={() => window.open("https://wa.me/6285156779923", "_blank")}
             >
@@ -84,37 +72,34 @@ const Home = () => {
 
           {/* Join Our Team Section */}
           <div className="mt-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Join Our Team
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Join Our Team</h2>
 
-            {/* Tombol Join Our Team */}
-            <button
-              className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition mb-8"
+            {/* Buy Now Button */}
+            <button 
+              className="glass px-8 py-4 text-black font-semibold hover:bg-gray-100 hover:text-black transition mb-8"
               onClick={() => navigate("/form")}
             >
               Buy Now
             </button>
 
             {/* Marquee-like Horizontal Scrolling */}
-            <div className="w-full">
+            <div className="w-full overflow-hidden py-4">
               <motion.div
                 className="flex"
                 animate={{
-                  x: ["0%", `-${100 * roles.length}%`], // Geser sejauh 6 elemen
+                  x: ["0%", "-50%"], // <- diperbaiki di sini
                 }}
                 transition={{
-                  duration: roles.length * 1.67, // ~10 detik total (3x lebih cepat)
+                  duration: 30,
                   repeat: Infinity,
-                  repeatType: "loop",
                   ease: "linear",
                 }}
-                style={{ width: `${100 * roles.length}%` }} // Lebar cukup untuk semua elemen
               >
-                {roles.map((job, index) => (
-                  <div
-                    key={index}
-                    className="glass p-6 rounded-lg min-w-[250px] mx-3 flex-shrink-0 border border-red-500"
+                {/* Double the array for seamless looping */}
+                {[...roles, ...roles].map((job, index) => (
+                  <div 
+                    key={`${job.role}-${index}`}
+                    className="glass p-6 rounded-lg min-w-[250px] mx-3 flex-shrink-0"
                   >
                     <h3 className="text-xl font-semibold mb-3">
                       {job.emoji} {job.role}
