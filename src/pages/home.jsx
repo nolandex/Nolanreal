@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
 
-  // Data untuk roles (tim) - sudah diperbaiki
+  // Data untuk roles (tim)
   const roles = [
     { role: "Web Developer", emoji: "🖥️" },
     { role: "UI/UX Designer", emoji: "💻" },
@@ -30,7 +30,12 @@ const Home = () => {
       description: "NolanDex provides websites, chatbots, social media, and automation for small businesses. Easy, affordable, plus reseller opportunities. Succeed online!"
     },
   ];
-  
+
+  // Hitung lebar total untuk animasi
+  const itemWidth = 250; // Sesuaikan dengan lebar aktual item Anda
+  const gap = 12; // Sesuaikan dengan gap/margin Anda
+  const totalWidth = (roles.length * (itemWidth + gap)) - gap;
+
   return (
     <>
       {/* Hero Section */}
@@ -74,7 +79,6 @@ const Home = () => {
           <div className="mt-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Join Our Team</h2>
 
-            {/* Buy Now Button */}
             <button 
               className="glass px-8 py-4 text-black font-semibold hover:bg-gray-100 hover:text-black transition mb-8"
               onClick={() => navigate("/form")}
@@ -82,24 +86,24 @@ const Home = () => {
               Buy Now
             </button>
 
-            {/* Marquee-like Horizontal Scrolling - Fixed Version */}
-            <div className="w-full overflow-hidden py-4">
+            {/* Marquee Container */}
+            <div className="w-full overflow-hidden py-4 relative">
               <motion.div
                 className="flex"
                 animate={{
-                  x: ["0%", "-100%"],
+                  x: [0, -totalWidth],
                 }}
                 transition={{
-                  duration: 30,
+                  duration: 20,
                   repeat: Infinity,
                   ease: "linear",
                 }}
               >
-                {/* Double the array for seamless looping */}
-                {[...roles, ...roles].map((job, index) => (
+                {roles.map((job, index) => (
                   <div 
                     key={`${job.role}-${index}`}
-                    className="glass p-6 rounded-lg min-w-[250px] mx-3 flex-shrink-0"
+                    className="glass p-6 rounded-lg mx-3"
+                    style={{ minWidth: `${itemWidth}px`, flexShrink: 0 }}
                   >
                     <h3 className="text-xl font-semibold mb-3">
                       {job.emoji} {job.role}
