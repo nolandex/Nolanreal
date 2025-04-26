@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import yourImage from './assets/display-image.jpg'; // Import your image
 
 const Form = () => {
-  // State for form data
   const [formData, setFormData] = useState({
     name: "",
     age: "",
     phone: ""
   });
 
-  // State for errors
   const [errors, setErrors] = useState({});
   const [showPopup, setShowPopup] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  // This is YOUR image that visitors will see
-  const displayImage = "https://example.com/your-image.jpg"; // Replace with your image URL
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,8 +48,7 @@ const Form = () => {
       const templateParams = {
         name: formData.name,
         age: formData.age,
-        phone: formData.phone,
-        display_image: displayImage // Include your image URL in the email
+        phone: formData.phone
       };
 
       const response = await emailjs.send(
@@ -79,11 +74,11 @@ const Form = () => {
       <div className="glass p-8 rounded-lg w-full max-w-md mt-24 mb-12">
         <h1 className="text-3xl font-bold mb-6 text-center">Join Our Team</h1>
         
-        {/* Your Display Image (shown to visitors) */}
-        <div className="mb-6 flex justify-center">
-          <div className="w-48 h-48 border-2 border-gray-600 rounded-lg overflow-hidden">
+        {/* Display Image - Larger Size */}
+        <div className="mb-8 flex justify-center">
+          <div className="w-64 h-64 border-2 border-gray-600 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src={displayImage} 
+              src={yourImage} 
               alt="Our Team" 
               className="w-full h-full object-cover"
             />
@@ -158,11 +153,11 @@ const Form = () => {
               <p><strong>Age:</strong> {formData.age}</p>
               <p><strong>Phone:</strong> {formData.phone}</p>
               
-              <div className="mt-4">
-                <p className="font-medium mb-2">Image:</p>
-                <div className="w-32 h-32 mx-auto border border-gray-600 rounded-lg overflow-hidden">
+              <div className="mt-6">
+                <p className="font-medium mb-2">Image Preview:</p>
+                <div className="w-48 h-48 mx-auto border border-gray-600 rounded-lg overflow-hidden">
                   <img 
-                    src={displayImage} 
+                    src={yourImage} 
                     alt="Preview" 
                     className="w-full h-full object-cover"
                   />
