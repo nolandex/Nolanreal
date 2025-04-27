@@ -50,7 +50,7 @@ const PricingCard = ({ activePkg, setActivePackage, activePackage }) => {
           rel="noopener noreferrer"
           className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-blue-700 transition-colors duration-200 mb-4"
         >
-          Pesan Sekarang
+          Buy Now
         </a>
         {activePackage === "Starter" && (
           <div className="flex gap-4">
@@ -190,9 +190,8 @@ const Home = () => {
               onClick={() => scrollToSection("pricing")}
               className="glass px-8 py-4 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-gray-100 hover:text-black transition"
             >
-              Pesan Sekarang
+              Buy Now
             </button>
-            {/* Tombol kedua dihapus */}
           </div>
 
           {/* Info Grid */}
@@ -213,7 +212,7 @@ const Home = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Choose Your Plan</h2>
             <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
-              Start transforming your business with Orion AI Services. Pick a plan that fits your needs and let’s get started!
+              Start transforming your business with Orion AI Services. Pick a plan that fits your needs and let's get started!
             </p>
             <PricingCard
               activePkg={activePkg}
