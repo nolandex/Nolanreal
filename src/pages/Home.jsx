@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"; // Gunakan Link untuk navigasi
 
 const Home = () => {
-  const navigate = useNavigate();
   const [activePackage, setActivePackage] = useState("Starter");
 
   // Data untuk info grid
@@ -111,12 +110,12 @@ const Home = () => {
             >
               Pesan Sekarang
             </button>
-            <button
-              onClick={() => navigate("/About")}
+            <Link
+              to="/about"
               className="glass px-8 py-4 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-gray-100 hover:text-black transition"
             >
               Pesan Sekarang
-            </button>
+            </Link>
           </div>
 
           {/* Info Grid */}
@@ -134,7 +133,7 @@ const Home = () => {
             id="pricing"
             className="mt-16"
             initial="hidden"
- anaphylwhileInView="visible"
+            whileInView="visible"
             viewport={{ once: true }}
             variants={sectionVariants}
           >
@@ -149,7 +148,7 @@ const Home = () => {
               variants={cardVariants}
               className="max-w-md mx-auto"
             >
-              <div className="p-6 rounded-lg text-left bg-gray-800 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300">
+              <div className="p-6 rounded-lg text-left bg-gray-800 hover:scale-105 transition-all duration-300">
                 <h3 className="text-2xl font-semibold text-white mb-3">{activePkg.name}</h3>
                 <p className="text-3xl font-bold text-blue-400 mb-4">{activePkg.price}</p>
                 <p className="text-gray-300 mb-4">{activePkg.description}</p>
