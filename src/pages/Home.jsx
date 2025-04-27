@@ -113,7 +113,7 @@ const Home = () => {
               Pesan Sekarang
             </button>
             <button
-              onClick={() => scrollToSection("services")}
+              onClick={() => navigate("/about")}
               className="glass px-8 py-4 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-gray-100 hover:text-black transition"
             >
               Pesan Sekarang
