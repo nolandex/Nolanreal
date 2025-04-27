@@ -20,7 +20,9 @@ const Home = () => {
     },
   ];
 
-  // Data untuk swivel images (sourced from public/images/)
+  // Data untuk swivel images
+  // GANTI src dengan nama file sebenarnya dari folder public/images/ di repositori GitHub Anda
+  // Contoh: Jika file Anda adalah public/images/ai-tech1.png, gunakan "/images/ai-tech1.png"
   const swivelImages = [
     {
       src: "/images/image1.jpg",
@@ -80,12 +82,12 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Swivel Images Section */}
+          {/* Swivel Images Section with Horizontal Scroll */}
           <div className="mt-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Innovations</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="scroll-container flex overflow-x-auto gap-8 pb-4">
               {swivelImages.map((image, index) => (
-                <div key={index} className="swivel-image-container">
+                <div key={index} className="swivel-image-container flex-shrink-0 w-64">
                   <img
                     src={image.src}
                     alt={image.alt}
@@ -98,8 +100,26 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Inline CSS for Swivel Effect */}
+      {/* Inline CSS for Swivel Effect and Scroll */}
       <style jsx>{`
+        .scroll-container {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+          height: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.5);
+          border-radius: 4px;
+        }
+
         .swivel-image-container {
           perspective: 1000px;
         }
