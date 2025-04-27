@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
-import ChatBot from "./pages/Chatbot";
+import ChatBot from "./pages/About";
 import Form from "./pages/Form";
 
 function App() {
@@ -20,12 +20,12 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/chatbot" element={<ChatBot />} />
+          <Route path="/About" element={<ChatBot />} />
           <Route path="/form" element={<Form />} />
         </Routes>
       </main>
       {/* Tampilkan footer hanya jika bukan di halaman ChatBot */}
-      {location.pathname !== "/chatbot" && <Footer />}
+      {location.pathname !== "/About" && <Footer />}
     </div>
   );
 }
