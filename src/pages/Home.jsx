@@ -138,7 +138,7 @@ const Home = () => {
               variants={cardVariants}
               className="max-w-md mx-auto"
             >
-              <div className="glass p-6 rounded-lg text-left bg-white/10 backdrop-blur-md hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300">
+              <div className="p-6 rounded-lg text-left bg-gray-800 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300">
                 <h3 className="text-2xl font-semibold text-white mb-3">{activePkg.name}</h3>
                 <p className="text-3xl font-bold text-blue-400 mb-4">{activePkg.price}</p>
                 <p className="text-gray-300 mb-4">{activePkg.description}</p>
