@@ -79,6 +79,14 @@ const Home = () => {
   // Paket aktif
   const activePkg = pricingPackages.find((pkg) => pkg.name === activePackage);
 
+  // Fungsi untuk scroll ke section
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -98,14 +106,17 @@ const Home = () => {
 
           {/* Buttons */}
           <div className="flex justify-center gap-4 mb-12">
-            <button className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition">
-              Explore Our Innovations
+            <button
+              onClick={() => scrollToSection("pricing")}
+              className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-blue-700 transition-colors duration-200"
+            >
+              Pesan Sekarang
             </button>
             <button
-              className="glass px-8 py-4 text-white font-semibold hover:bg-gray-100 hover:text-black transition"
-              onClick={() => navigate("/chatbot")}
+              onClick={() => scrollToSection("services")}
+              className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-blue-700 transition-colors duration-200"
             >
-              Try Our First AI Chat
+              Pesan Sekarang
             </button>
           </div>
 
@@ -121,6 +132,7 @@ const Home = () => {
 
           {/* Pricing Section */}
           <motion.div
+            id="pricing"
             className="mt-16"
             initial="hidden"
             whileInView="visible"
@@ -194,6 +206,35 @@ const Home = () => {
                 )}
               </div>
             </motion.div>
+          </motion.div>
+
+          {/* Services Section (Placeholder) */}
+          <motion.div
+            id="services"
+            className="mt-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={sectionVariants}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Our Services</h2>
+            <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+              Discover the range of AI solutions we offer to transform your business.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+              <div className="glass p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-3">AI Chatbots</h3>
+                <p className="text-gray-400">Enhance customer support with intelligent chatbots.</p>
+              </div>
+              <div className="glass p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-3">AI Analytics</h3>
+                <p className="text-gray-400">Gain insights with advanced AI-driven analytics.</p>
+              </div>
+              <div className="glass p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-3">Custom AI Solutions</h3>
+                <p className="text-gray-400">Tailored AI tools for your unique business needs.</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
