@@ -20,22 +20,22 @@ const Home = () => {
     },
   ];
 
-  // Data untuk swivel images (placeholder URLs, replace with your own)
+  // Data untuk swivel images (sourced from public/images/)
   const swivelImages = [
     {
-      src: "https://via.placeholder.com/300x300?text=Image+1",
+      src: "/images/image1.jpg",
       alt: "AI Innovation 1",
     },
     {
-      src: "https://via.placeholder.com/300x300?text=Image+2",
+      src: "/images/image2.jpg",
       alt: "AI Innovation 2",
     },
     {
-      src: "https://via.placeholder.com/300x300?text=Image+3",
+      src: "/images/image3.jpg",
       alt: "AI Innovation 3",
     },
     {
-      src: "https://via.placeholder.com/300x300?text=Image+4",
+      src: "/images/image4.jpg",
       alt: "AI Innovation 4",
     },
   ];
