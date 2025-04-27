@@ -23,7 +23,6 @@ const Home = () => {
   ];
 
   // Data untuk pricing packages
-  // GANTI detail paket (nama, harga, fitur, whatsappLink) sesuai kebutuhan
   const pricingPackages = [
     {
       name: "Starter",
@@ -113,7 +112,7 @@ const Home = () => {
               Pesan Sekarang
             </button>
             <button
-              onClick={() => navigate("/about")}
+              onClick={() => navigate("/form")}
               className="glass px-8 py-4 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-gray-100 hover:text-black transition"
             >
               Pesan Sekarang
@@ -135,7 +134,7 @@ const Home = () => {
             id="pricing"
             className="mt-16"
             initial="hidden"
-            whileInView="visible"
+ anaphylwhileInView="visible"
             viewport={{ once: true }}
             variants={sectionVariants}
           >
@@ -144,7 +143,7 @@ const Home = () => {
               Start transforming your business with Orion AI Services. Pick a plan that fits your needs and let’s get started!
             </p>
             <motion.div
-              key={activePackage} // Key untuk memicu animasi saat paket berubah
+              key={activePackage}
               initial="hidden"
               animate="visible"
               variants={cardVariants}
@@ -178,7 +177,6 @@ const Home = () => {
                 >
                   Pesan Sekarang
                 </a>
-                {/* Tombol pergantian hanya di Starter */}
                 {activePackage === "Starter" && (
                   <div className="flex gap-4">
                     <button
@@ -195,7 +193,6 @@ const Home = () => {
                     </button>
                   </div>
                 )}
-                {/* Tombol kembali ke Starter di Professional/Enterprise */}
                 {activePackage !== "Starter" && (
                   <button
                     onClick={() => setActivePackage("Starter")}
@@ -206,67 +203,6 @@ const Home = () => {
                 )}
               </div>
             </motion.div>
-          </motion.div>
-
-          {/* Form Section */}
-          <motion.div
-            id="services"
-            className="mt-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariants}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Contact Us</h2>
-            <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
-              Fill out the form below to get in touch with our team and start your AI journey!
-            </p>
-            <div className="max-w-md mx-auto">
-              <form className="glass p-6 rounded-lg">
-                <div className="mb-4">
-                  <label htmlFor="name" className="block text-white font-semibold mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    placeholder="Your Name"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="email" className="block text-white font-semibold mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    placeholder="Your Email"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="message" className="block text-white font-semibold mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    className="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    placeholder="Your Message"
-                    rows="4"
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-blue-700 transition-colors duration-200"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
           </motion.div>
         </div>
       </section>
