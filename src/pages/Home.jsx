@@ -108,13 +108,13 @@ const Home = () => {
           <div className="flex justify-center gap-4 mb-12">
             <button
               onClick={() => scrollToSection("pricing")}
-              className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-blue-700 transition-colors duration-200"
+              className="glass px-8 py-4 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-gray-100 hover:text-black transition"
             >
               Pesan Sekarang
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-blue-700 transition-colors duration-200"
+              className="glass px-8 py-4 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-gray-100 hover:text-black transition"
             >
               Pesan Sekarang
             </button>
