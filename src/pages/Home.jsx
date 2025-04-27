@@ -20,25 +20,40 @@ const Home = () => {
     },
   ];
 
-  // Data untuk swivel images
-  // GANTI src dengan nama file sebenarnya dari folder public/images/ di repositori GitHub Anda
-  // Contoh: Jika file Anda adalah public/images/ai-tech1.png, gunakan "/images/ai-tech1.png"
-  const swivelImages = [
+  // Data untuk pricing packages
+  // GANTI detail paket (nama, harga, fitur, link WhatsApp) sesuai kebutuhan
+  const pricingPackages = [
     {
-      src: "/images/image1.jpg",
-      alt: "AI Innovation 1",
+      name: "Basic",
+      price: "$99/month",
+      features: [
+        "Access to core AI features",
+        "Standard support",
+        "Up to 5 users",
+      ],
+      whatsappLink: "https://wa.me/+1234567890?text=Saya%20tertarik%20dengan%20paket%20Basic",
     },
     {
-      src: "/images/image2.jpg",
-      alt: "AI Innovation 2",
+      name: "Pro",
+      price: "$199/month",
+      features: [
+        "All Basic features",
+        "Advanced AI analytics",
+        "Priority support",
+        "Up to 20 users",
+      ],
+      whatsappLink: "https://wa.me/+1234567890?text=Saya%20tertarik%20dengan%20paket%20Pro",
     },
     {
-      src: "/images/image3.jpg",
-      alt: "AI Innovation 3",
-    },
-    {
-      src: "/images/image4.jpg",
-      alt: "AI Innovation 4",
+      name: "Enterprise",
+      price: "Custom",
+      features: [
+        "All Pro features",
+        "Custom AI solutions",
+        "Dedicated account manager",
+        "Unlimited users",
+      ],
+      whatsappLink: "https://wa.me/+1234567890?text=Saya%20tertarik%20dengan%20paket%20Enterprise",
     },
   ];
 
@@ -82,57 +97,33 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Swivel Images Section with Horizontal Scroll */}
+          {/* Pricing Section */}
           <div className="mt-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Innovations</h2>
-            <div className="scroll-container flex overflow-x-auto gap-8 pb-4">
-              {swivelImages.map((image, index) => (
-                <div key={index} className="swivel-image-container flex-shrink-0 w-64">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="swivel-image w-full h-auto rounded-lg"
-                  />
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Pricing Plans</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {pricingPackages.map((pkg, index) => (
+                <div key={index} className="glass p-6 rounded-lg text-left">
+                  <h3 className="text-2xl font-semibold mb-3">{pkg.name}</h3>
+                  <p className="text-3xl font-bold text-white mb-4">{pkg.price}</p>
+                  <ul className="text-gray-400 mb-6">
+                    {pkg.features.map((feature, idx) => (
+                      <li key={idx} className="mb-2">• {feature}</li>
+                    ))}
+                  </ul>
+                  <a
+                    href={pkg.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="glass px-6 py-3 text-white font-semibold hover:bg-gray-100 hover:text-black transition inline-block"
+                  >
+                    Contact Us on WhatsApp
+                  </a>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </section>
-
-      {/* Inline CSS for Swivel Effect and Scroll */}
-      <style jsx>{`
-        .scroll-container {
-          scrollbar-width: thin;
-          scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
-        }
-
-        .scroll-container::-webkit-scrollbar {
-          height: 8px;
-        }
-
-        .scroll-container::-webkit-scrollbar-track {
-          background: transparent;
-        }
-
-        .scroll-container::-webkit-scrollbar-thumb {
-          background: rgba(255, 255, 255, 0.5);
-          border-radius: 4px;
-        }
-
-        .swivel-image-container {
-          perspective: 1000px;
-        }
-
-        .swivel-image {
-          transition: transform 0.5s ease;
-        }
-
-        .swivel-image:hover {
-          transform: rotateY(15deg) rotateX(15deg);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-      `}</style>
     </>
   );
 };
