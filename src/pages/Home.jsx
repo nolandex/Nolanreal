@@ -112,12 +112,14 @@ const Home = () => {
             >
               Pesan Sekarang
             </button>
-            <button
-              onClick={() => scrollToSection("services")}
+            <a
+              href="https://nolanreal.vercel.app/services"
+              target="_blank"
+              rel="noopener noreferrer"
               className="glass px-8 py-4 text-white font-semibold rounded-tl-[20px] rounded-br-[20px] hover:bg-gray-100 hover:text-black transition"
             >
               Pesan Sekarang
-            </button>
+            </a>
           </div>
 
           {/* Info Grid */}
@@ -206,35 +208,6 @@ const Home = () => {
                 )}
               </div>
             </motion.div>
-          </motion.div>
-
-          {/* Services Section (Placeholder) */}
-          <motion.div
-            id="services"
-            className="mt-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariants}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Our Services</h2>
-            <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
-              Discover the range of AI solutions we offer to transform your business.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-              <div className="glass p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">AI Chatbots</h3>
-                <p className="text-gray-400">Enhance customer support with intelligent chatbots.</p>
-              </div>
-              <div className="glass p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">AI Analytics</h3>
-                <p className="text-gray-400">Gain insights with advanced AI-driven analytics.</p>
-              </div>
-              <div className="glass p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">Custom AI Solutions</h3>
-                <p className="text-gray-400">Tailored AI tools for your unique business needs.</p>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
